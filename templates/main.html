@@ -5,17 +5,15 @@
 </head>
 <body>
 	<div>
-		Fitness: {{ data['fitness'] }} <br>
 		{% for class in data['tt'] %}
 		<br>
-		{{ class[3][3].CLASS }}
 		<table border="1" >
 			{% for day in class %}
 			<tr>
 				{% for time in day %}
-				<td width = "85" height = "30" bgcolor = "{{ time.colour }}" >
+				<td width = "85" height = "30">
 					{% if time != 0 %}						
-						{{ time.name }} {{ time.teacher }}
+						{{ time[0] }} {{ time[1] }}
 					{% endif %}
 				</td>
 				{% endfor %}
