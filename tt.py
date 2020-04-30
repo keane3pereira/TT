@@ -1,5 +1,6 @@
 import numpy, random
 from data import teachers, teacher_count, classes_map
+import pickle
 
 def assign_teacher():
     '''assigns subjects to teachers evenly'''
@@ -161,19 +162,5 @@ class TT:
 
     def save_to_file(self):
         ''' save tt to file '''
-        file = open('savefile.py', 'w')
-        subs = []
-        for CLASS in range(len(self.grid)):
-            C = []
-            for day in self.grid[CLASS]:
-                E = []
-                for subject in day:
-                    if subject == 0:
-                        E.append((0, 0))
-                    else:
-                        E.append((subject.name, subject.teacher))
-                C.append(E)
-            subs.append(C)
-        
-        file.writelines("saved_tt = " + str(subs) + "\n")
-        file.close()
+        file = open('savefile.p', 'wb')
+        pickle.dump(self.grid, file)

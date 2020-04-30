@@ -1,14 +1,21 @@
 from flask import Flask, render_template, redirect
+from flask_bootstrap import Bootstrap
 from data import teachers, teacher_count, classes_map, classes
 from tt import Department, Class, Subject, TT, assign_teacher
+import pickle
 
 
 app = Flask('my_app')
+Bootstrap(app)
 
 @app.route('/')
 def main():
-    from savefile import saved_tt
-    data = {'tt': saved_tt}
+    try:
+        file = open('savefile.p', 'rb')
+        saved_tt = pickle.load(file)
+        data = {'tt': saved_tt}
+    except:
+        data = None
     return render_template('main.html', data = data)
     
 @app.route('/create')
@@ -32,11 +39,10 @@ def create():
     D.CLASSES[3].SUBJECTS[0].running_behind += 4 #CN
     D.CLASSES[3].SUBJECTS[1].running_behind -= 3 #LA'''
 
-    TTS = [TT(D) for _ in range(10)]
-    min(TTS, key = lambda x : x.fitness).save_to_file()
+    T = TT(D)
+    T.save_to_file()
+    #x.display_grid()
     
-    #T.display_grid()
-
     return redirect('/')
 
 
