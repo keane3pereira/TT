@@ -3,7 +3,7 @@ teachers = ['S','SG','GS','AM','HP','VB','AA','BS','ND']
 teacher_count = -1
 
 classes = {
-    'FYIT' : ['OOP', 'DBMS','WP',   'DM',  'TOLS', 'PP'],
+    'FYIT' : ['OOP', 'DBMS','WP',   'DM',  'TOOLS', 'PP'],
     'FYCS' : ['WP',  'DM',  'TOLS', 'DBMS','OOP',  'PP'],
     'SYIT' : ['SE',  'ES',  'CG',   'CJ',  'COST'],
     'SYCS' : ['CN', 'LA',  'FA',   'ADF', 'NET',  'AJ', 'SE'],
