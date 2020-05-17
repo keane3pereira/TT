@@ -8,7 +8,13 @@ classes = {
     'SYIT' : ['SE',  'ES',  'CG',   'CJ',  'COST'],
     'SYCS' : ['CN', 'LA',  'FA',   'ADF', 'NET',  'AJ', 'SE'],
     'TYIT' : ['ITSM','SC',  'BI',   'AMP', 'SQM',  'PGIS'],
-    'TYCS' : ['EH',  'CC',  'DIP',  'DS']
+    'TYCS' : ['EH',  'CC',  'DIP',  'DS'],
 }
 
 classes_map = ['FYIT','FYCS','SYIT','SYCS','TYIT','TYCS']
+
+dept_details = {
+    'name': 'IT/CS',
+    'labs': 3,
+    'classrooms': 6
+}

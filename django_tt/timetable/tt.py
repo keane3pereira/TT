@@ -1,12 +1,7 @@
 import numpy, random
-from data import teachers, teacher_count, classes_map
+from timetable.data import teachers, teacher_count, classes_map, dept_details
 import pickle
 
-def assign_teacher():
-    '''assigns subjects to teachers evenly'''
-    global teacher_count
-    teacher_count = (teacher_count + 1) % len(teachers)
-    return teachers[teacher_count]
 
 
 class Subject:
